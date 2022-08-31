@@ -1,48 +1,165 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+
+/********** Base styles **********/
+* {
+  box-sizing: border-box;
+}
+h1 {
+  margin-bottom: 15px;
+}
+
+p {
+  border: 0px solid black;
+  background-color: #F6F8FC;
+  width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Helvetica;
+  color: black;
+}
+
+/* Simple Responsive Framework. */
+.row {
+  width: 100%;
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+    border: 0px solid blue;
+  }
+  .col-lg-1 {
+    width: 8.33%;
+  }
+  .col-lg-2 {
+    width: 16.66%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33%;
+  }
+  .col-lg-5 {
+    width: 41.66%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.33%;
+  }
+  .col-lg-8 {
+    width: 66.66%;
+  }
+  .col-lg-9 {
+    width: 74.99%;
+  }
+  .col-lg-10 {
+    width: 83.33%;
+  }
+  .col-lg-11 {
+    width: 91.66%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+    border: 0px solid blue;
+  }
+  .col-md-1 {
+    width: 8.33%;
+  }
+  .col-md-2 {
+    width: 16.66%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.33%;
+  }
+  .col-md-5 {
+    width: 41.66%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.33%;
+  }
+  .col-md-8 {
+    width: 66.66%;
+  }
+  .col-md-9 {
+    width: 74.99%;
+  }
+  .col-md-10 {
+    width: 83.33%;
+  }
+  .col-md-11 {
+    width: 91.66%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+
+
 <body>
 
 <h1>WeHelp 申請者 - 林岳瑾</h1>
-<h2>個人簡介</h2>
 
-<p><b>十年英語教學，七年資安工作：跨領域價值創造者</b></p>
-<p>從翻譯、業務行銷，到 Python 流程優化，CMS 網站開發，GitHub Hugo 靜態網站開發，在科技公司，文組生進入半資訊工程的世界。體驗到科技的力量後，將 Python、Heroku、Dialogflow、LINE 聊天機器人等工具帶入教學。</p>
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>個人簡介</h2></div>
+<div class="col-lg-10 col-md-10"><p><b>十年英語教學，七年資安工作：跨領域價值創造者</b><br>從翻譯、業務行銷，到 Python 流程優化，CMS 網站開發，GitHub Hugo 靜態網站開發，在科技公司，文組生進入半資訊工程的世界。體驗到科技的力量後，將 Python、Heroku、Dialogflow、LINE 聊天機器人等工具帶入教學。<br><br><b>洞見市場需求 決定自己寫程式</b><br>2018年進入師大研究所進修，發現英語老師仍使用耗費時間的方式查詢資料、製作講義，於是，我去年為一百多位英語老師舉辦 Python 工作坊，並和指導教授一同在師大研究所開課，分享使用 Python 優化備課流程。現在，我決定要創造更多網頁應用，幫助台灣教育工作者。</p></div>
+</div>
 
-<p><br><b>洞見市場需求 決定自己寫程式</b></p>
-<p>2018年進入師大研究所進修，發現英語老師仍使用耗費時間的方式查詢資料、製作講義，於是，我去年為一百多位英語老師舉辦 Python 工作坊，並和指導教授一同在師大研究所開課，分享使用 Python 優化備課流程。現在，我決定要創造更多網頁應用，幫助台灣教育工作者。</p>
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>成為軟體人才</h2></div>
+<div class="col-lg-10 col-md-10"><p><b>用 Python 解決日常問題</b><br>2016年完成三門 Python 的線上課程後，第一件做的事情就是爬取資安漏洞庫的20萬筆資料，並整理到 SQLite。<br>2017年用 TK UI 工具，結合 Python，做了一個字典速查工具給台灣的翻譯者。<br>2018、2019年，協助師大研究所教授，用 Python 串接 Pandorabot 聊天機器人、開發 Google Assistant App、串接 LINE 聊天機器人、串接 Google 文字轉語音服務、Google 翻譯服務等。<br>2021年自己辦 Python Workshop 給教育工作者，並開始在研究所開班授課，針對英語老師的需求，以 Colab 為平台，開發流程優化工具給英語老師，並以此為畢業論文。<br>為了將寫好的 Python 腳本呈現在網頁，讓更多人能直接操作使用，開始學習網站架設（html, css, javascript)，目前剩 Javascript 還沒學。</p></div>
+</div>
 
-<h2>成為軟體人才的努力</h2>
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>時間安排</h2></div>
+<div class="col-lg-10 col-md-10"><p>目前還有資安公司的正職工作，預計九月底離職，十月初全心專注投入在 WeHelp 的課程，經濟收入則靠傍晚在補習班教書，維持一定收入。預計以「實作專案」為主要目標，以最終作品為學習考量，因此可以接受投入假日的時間。</p></div>
+</div>
 
-<p><b>用 Python 解決日常問題</b></p>
-<p>2016年完成三門 Python 的線上課程後，第一件做的事情就是爬取資安漏洞庫的20萬筆資料，並整理到 SQLite。</p>
-<p>2017年用 TK UI 工具，結合 Python，做了一個字典速查工具給台灣的翻譯者。</p>
-<p>2018、2019年，協助師大研究所教授，用 Python 串接 Pandorabot 聊天機器人、開發 Google Assistant App、串接 LINE 聊天機器人、串接 Google 文字轉語音服務、Google 翻譯服務等。</p>
-<p>2021年自己辦 Python Workshop 給教育工作者，並開始在研究所開班授課，針對英語老師的需求，以 Colab 為平台，開發流程優化工具給英語老師，並以此為畢業論文。</p>
-<p>為了將寫好的 Python 腳本呈現在網頁，讓更多人能直接操作使用，開始學習網站架設（html, css, javascript)，目前剩 Javascript 還沒學。</p>
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>軟體公司</h2></div>
+<div class="col-lg-10 col-md-10"><p>轉職成為軟體工程師後，預計和老婆在英國生活。目前老婆正在英國工作，軟體公司的選擇，目前以在倫敦的資安公司 Callsign、Onfido 為主，持續累積在資安領域的技能和知識。</p></div>
+</div>
 
-<h2>進入 WeHelp 的時間安排</h2>
-<p>目前還有資安公司的正職工作，預計九月底離職，十月初全心專注投入在 WeHelp 的課程，經濟收入則靠傍晚在補習班教書，維持一定收入。預計以「實作專案」為主要目標，以最終作品為學習考量，因此可以接受投入假日的時間。</p>
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>克服的難題</h2></div>
+<div class="col-lg-10 col-md-10"><p>人生中最大的難題，就是和老婆的溝通。她接受西式教育，很有自己的主見，送禮不合心意，就等著被霸凌，講話沒重點，等著被批鬥。因此，我只好不斷 Try .. Except..，每天記錄溝通不順暢的點，更深入思考她講每一句話的語意，彷彿在寫 API 一般....。現在心靈相通，比較能在同個頻率溝通。過程中領悟到：和老婆溝通就像寫程式，遇到挫折不要放棄，不要難過，看到 Traceback 是基本，不知道正確答案的話，Loop 給它開下去，總會看到希望之光。</p></div>
+</div>
 
-<h2>想加入的軟體公司</h2>
-<p>轉職成為軟體工程師的真正原因是：預計和老婆在英國生活。為了能和已經在英國工作的老婆一起生活，必須選擇收入水平較高的軟體工程師，才有機會被英國公司雇用，並在英國成立家庭。軟體公司的選擇，目前以在倫敦的資安公司 Callsign、Onfido 為主，持續累積在資安領域的技能和知識。</p>
 
-<h2>克服的難題</h2>
-<p>人生中最大的難題，就是和老婆的溝通。她接受西式教育，很有自己的主見，送禮不合心意，就等著被霸凌，講話沒重點，等著被批鬥。因此，我只好不斷 Try .. Except..，每天記錄溝通不順暢的點，更深入思考她講每一句話的語意，彷彿在寫 API 一般....。現在心靈相通，比較能在同個頻率溝通。過程中領悟到：和老婆溝通就像寫程式，遇到挫折不要放棄，不要難過，看到 Traceback 是基本，不知道正確答案的話，Loop 給它開下去，總會看到希望之光。</p>
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>網頁開發心得</h2></div>
+<div class="col-lg-10 col-md-10"><p><b>第一次獻給此網站</b><br>
+目前雖然學完 html 和 css 的知識，但還沒實務開發過，因此這是開發網站的寶貴經驗。有了這次的經驗，即便未來會接觸到更深的內容，也能回想開發這網站的過程，一步一步來，先定位目標，釐清問題，尋找解方，慢慢地就可以做出心目中的網站。<br><br><b>若用想的，就很困難，捲起袖子，先寫就對了</b><br>雖然說寫作文、寫程式都必須擬好框架，但當技術門檻成為一種恐懼和阻礙時，先不論框架，從最基本的開始嘗試。先從 heading、paragraph 標籤開始，填入內容，接著思考字體，然後再去調整顏色，不要好高鶩遠，一步一步慢慢來，才能克服恐懼，架好基本網站。<br><br><b>用過 Hugo，但還沒自己架設 from scratch</b><br>之前使用過 hugo 模板在 GitHub 架設網站，但尚未從無到有創造出網站框架，因此這次是非常難忘的經驗。
+</p></div>
+</div>
 
-<h2>網頁開發心得</h2>
-<p><b>第一次獻給此網站</b></p>
-
-<p>目前雖然學完 html 和 css 的知識，但還沒實務開發過，因此這是開發網站的寶貴經驗。有了這次的經驗，即便未來會接觸到更深的內容，也能回想開發這網站的過程，一步一步來，先定位目標，釐清問題，尋找解方，慢慢地就可以做出心目中的網站。</p>
-
-<p><b>若用想的，就很困難，捲起袖子，先寫就對了</b></p>
-<p>雖然說寫作文、寫程式都必須擬好框架，但當技術門檻成為一種恐懼和阻礙時，先不論框架，從最基本的開始嘗試。先從 heading、paragraph 標籤開始，填入內容，接著思考字體，然後再去調整顏色，不要好高鶩遠，一步一步慢慢來，才能克服恐懼，架好基本網站。
-
-<p><b>用過 Hugo，但還沒自己架設 from scratch</b></p>
-<p>之前使用過 hugo 模板在 GitHub 架設網站，但尚未從無到有創造出網站框架，因此這次是非常難忘的經驗。</p>
-
-<h2>其他想說的事情</h2>
-<p>只能說非常感謝 WeHelp 團隊，在我人生中的重大轉折，思考轉職方向時，剛好看到 WeHelp 的課程，這真的是天降甘霖，真心希望能不辜負 WeHelp 團隊的辛勞，具備前後端的基本開發技能，實現去英國和老婆一起生活的願望，並且開發實用網頁型的備課工具，讓英文老師不要再那麼辛苦。</p>
-
+<div class="row">
+<div class="col-lg-2 col-md-2"><h2>其他想說的</h2></div>
+<div class="col-lg-10 col-md-10"><p>只能說非常感謝 WeHelp 團隊，在我人生中的重大轉折，思考轉職方向時，剛好看到 WeHelp 的課程，這真的是天降甘霖，真心希望能不辜負 WeHelp 團隊的辛勞，具備前後端的基本開發技能，實現去英國和老婆一起生活的願望，並且開發實用網頁型的備課工具，讓英文老師不要再那麼辛苦。</p></div>
+</div>
 
 
 </body>
