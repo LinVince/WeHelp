@@ -1,0 +1,39 @@
+.frame{
+  display:flex;
+  font-size:20px;
+  
+}
+.left{
+  background-color:#FFFFFF;
+  flex:auto;
+  width:400px
+}
+.right{
+  display:flex;
+  justify-content:flex-end;
+  background-color:#FFFFFF;
+  flex:none;
+  width:50%
+}
+.item{
+  background-color:#FFFFFF;
+  flex:none;
+  width:100px;
+  margin-right:10px;
+  text-align:center;
+}
+
+.welcome{
+  display:flex;
+  height:300px;
+  background-color:#FA4616;
+  align-items:center;
+  justify-content:center;
+}
+.text{
+  font-size:30px;
+  fone-weight:bold;
+  text-align:center;
+}
+
+
