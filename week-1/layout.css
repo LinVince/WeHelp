@@ -26,7 +26,7 @@
 .welcome{
   display:flex;
   height:300px;
-  background-color:#A5AAFF;
+  background-color:#89CFF0;
   align-items:center;
   justify-content:center;
 }
@@ -43,25 +43,36 @@
 }
 
 .gallery-name {
-  background-color:#FFFFAA;
+  background-color:#FFFFFF;
   width:1200px;
   display:flex;
-  justify-content:center;
-     
-  
+  justify-content:center;   
 
 }
-.name{
+.name {
   height:50px;
   width:50%;
-  margin-right:10px;
-  background-color:#FAAAAA;
+  margin-right:8px;
+  background-color:#89CFF0;
   text-align:left;
   display:flex;
-  align-items:center;
+  align-items:center;  
+}
+.showcase {
+  width:1200px;
+  background-color:#FFFFFF;
+  display:flex;
+  justify-content:center;
+  margin-right:8px;
+  gap:2px;
+}
+.photo {
+  width:25%;
+  margin-right:2px;
+  background-color:#89CFF0;
+  text-align:center;
   
 }
-
 
 
 @media (min-width: 1200px){
