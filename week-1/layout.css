@@ -6,14 +6,16 @@
 .left{
   background-color:#FFFFFF;
   flex:auto;
-  width:400px
+  width:400px;
+  margin:8px;
 }
 .right{
   display:flex;
   justify-content:flex-end;
   background-color:#FFFFFF;
   flex:none;
-  width:40%
+  width:40%;
+  margin:8px;
 }
 .item{
   background-color:#FFFFFF;
@@ -47,31 +49,34 @@
   width:1200px;
   display:flex;
   justify-content:center;   
-
+  gap:10px;
 }
 .name {
   height:50px;
   width:50%;
-  margin-right:8px;
+  #margin-right:8px;
   background-color:#89CFF0;
   text-align:left;
   display:flex;
   align-items:center;  
+  
 }
 .showcase {
   width:1200px;
   background-color:#FFFFFF;
   display:flex;
   justify-content:center;
-  margin-right:8px;
-  gap:2px;
+  #margin-right:5px;
+  gap:8px;
 }
 .photo {
   width:25%;
-  margin-right:2px;
+  #margin-right:2px;
   background-color:#89CFF0;
-  text-align:center;
+  text-align:center;  
+  gap:8px;
 }
+
 body{
 margin:0px;
 }
