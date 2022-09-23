@@ -71,9 +71,10 @@
   margin-right:2px;
   background-color:#89CFF0;
   text-align:center;
-  
 }
-
+body{
+margin:0px;
+}
 
 @media (min-width: 1200px){
   
