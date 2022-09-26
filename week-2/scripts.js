@@ -1,8 +1,8 @@
 //#### 1 ####
 
 function calculate(min, max, step) {
-  let numList = [];
-  let i = 1 ;
+  var numList = [];
+  var i = 1 ;
   while (1 < 2){
   	if (min + step * i > max){
     	break;	
@@ -20,9 +20,9 @@ calculate(-1, 2, 2); // 你的程式要能夠計算 -1+1,最後印出 0
 
 //#### 2 ####
 function avg(data){
-  let count = 0;
-  let salary = 0;
-  let arrayLength = data['employees'].length;
+  var count = 0;
+  var salary = 0;
+  var arrayLength = data['employees'].length;
   for (var i = 0; i < arrayLength; i++){
       if (data['employees'][i]['manager'] === false){
           salary += data['employees'][i]['salary'];
@@ -75,12 +75,12 @@ func(-3)(2, 9); // 你補完的函式能印出 -3+(2*9) 的結果 15
 
 //#### 4 ####
 function maxProduct(nums){
-  let num = 0;
-  let max = Number.NEGATIVE_INFINITY;
+  var num = 0;
+  var max = Number.NEGATIVE_INFINITY;
   for (var i = 0; i < nums.length; i++){
-    let a = nums[i];
+    var a = nums[i];
     for (var j = 0; j < nums.length; j++){
-        let b = nums[j];
+        var b = nums[j];
         if (i != j && a * b > max){
             max = a * b;
         }
@@ -101,9 +101,9 @@ maxProduct([-5, -2]) // 得到 10
 //#### 5 ####
 function twoSum(nums, target){
   for (var i = 0; i < nums.length; i++){
-    let a = nums[i];
+    var a = nums[i];
     for (var j = 0; j < nums.length; j++){
-        let b = nums[j];
+        var b = nums[j];
         if (i != j && a + b == target){
             return ([i,j]);
         }
