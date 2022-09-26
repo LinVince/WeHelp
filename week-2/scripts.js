@@ -115,5 +115,25 @@ console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
 
 
 #### 6 ####
+function maxZeros(nums){
+  count = 0
+  max = 0
+  for (var i = 0; i < nums.length; i++){
+      if (nums[i] == 0){
+        count += 1;
+        if (count > max){
+            max = count;
+        }
+      }
+      if (nums[i] == 1){
+        count = 0;     
+      }
+    } 
+  return max
+}
 
+maxZeros([0, 1, 0, 0]); // 得到 2
+maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4
+maxZeros([1, 1, 1, 1, 1]); // 得到 0
+maxZeros([0, 0, 0, 1, 1]) // 得到 3
 
