@@ -74,3 +74,29 @@ func(-3)(2, 9); // 你補完的函式能印出 -3+(2*9) 的結果 15
 
 
 #### 4 ####
+function maxProduct(nums){
+  let num = 0;
+  let max = Number.NEGATIVE_INFINITY;
+  for (var i = 0; i < nums.length; i++){
+    let a = nums[i];
+    for (var j = 0; j < nums.length; j++){
+        let b = nums[j];
+        if (i != j && a * b > max){
+            max = a * b;
+        }
+    }
+  }  
+  return max
+}
+
+maxProduct([5, 20, 2, 6]) // 得到 120
+maxProduct([10, -20, 0, 3]) // 得到 30
+maxProduct([10, -20, 0, -3]) // 得到 60
+maxProduct([-1, 2]) // 得到 -2
+maxProduct([-1, 0, 2]) // 得到 0 或 -0
+maxProduct([5, -1, -2, 0]) // 得到 2
+maxProduct([-5, -2]) // 得到 10
+
+
+#### 5 ####
+
