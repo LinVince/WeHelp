@@ -1,4 +1,4 @@
-#### 1 ####
+//#### 1 ####
 
 function calculate(min, max, step) {
   let numList = [];
@@ -10,7 +10,7 @@ function calculate(min, max, step) {
 	numList.push(min + step * i);
     i += 1;
   }
-  return (min  + numList.reduce((a,b)=>a+b));   
+  console.log (min  + numList.reduce((a,b)=>a+b));   
   }
 
 calculate(1, 3, 1); // 你的程式要能夠計算 1+2+3,最後印出 6
@@ -18,7 +18,7 @@ calculate(4, 8, 2); // 你的程式要能夠計算 4+6+8,最後印出 18
 calculate(-1, 2, 2); // 你的程式要能夠計算 -1+1,最後印出 0
 
 
-#### 2 ####
+//#### 2 ####
 function avg(data){
   let count = 0;
   let salary = 0;
@@ -29,7 +29,7 @@ function avg(data){
           count += 1
       }
   }
-  return (salary/count);
+  console.log (salary/count);
 }
 
 avg({
@@ -58,7 +58,7 @@ avg({
 }); // 呼叫 avg 函式
 
 
-#### 3 ####
+//#### 3 ####
 function func(a){
   function _func(b,c){
       return a + (b * c);
@@ -73,7 +73,7 @@ func(-3)(2, 9); // 你補完的函式能印出 -3+(2*9) 的結果 15
 
 
 
-#### 4 ####
+//#### 4 ####
 function maxProduct(nums){
   let num = 0;
   let max = Number.NEGATIVE_INFINITY;
@@ -86,7 +86,7 @@ function maxProduct(nums){
         }
     }
   }  
-  return max
+  console.log (max)
 }
 
 maxProduct([5, 20, 2, 6]) // 得到 120
@@ -98,7 +98,7 @@ maxProduct([5, -1, -2, 0]) // 得到 2
 maxProduct([-5, -2]) // 得到 10
 
 
-#### 5 ####
+//#### 5 ####
 function twoSum(nums, target){
   for (var i = 0; i < nums.length; i++){
     let a = nums[i];
@@ -114,7 +114,7 @@ result = twoSum([2, 11, 7, 15], 9);
 console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
 
 
-#### 6 ####
+//#### 6 ####
 function maxZeros(nums){
   count = 0
   max = 0
@@ -129,11 +129,10 @@ function maxZeros(nums){
         count = 0;     
       }
     } 
-  return max
+  console.log (max)
 }
 
 maxZeros([0, 1, 0, 0]); // 得到 2
 maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4
 maxZeros([1, 1, 1, 1, 1]); // 得到 0
 maxZeros([0, 0, 0, 1, 1]) // 得到 3
-
