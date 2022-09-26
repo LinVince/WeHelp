@@ -99,4 +99,21 @@ maxProduct([-5, -2]) // 得到 10
 
 
 #### 5 ####
+function twoSum(nums, target){
+  for (var i = 0; i < nums.length; i++){
+    let a = nums[i];
+    for (var j = 0; j < nums.length; j++){
+        let b = nums[j];
+        if (i != j && a + b == target){
+            return ([i,j]);
+        }
+    }
+  }
+}
+result = twoSum([2, 11, 7, 15], 9);
+console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
+
+
+#### 6 ####
+
 
