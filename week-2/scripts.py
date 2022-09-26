@@ -116,7 +116,7 @@ def maxZeros(nums):
         max = count
       count = 0
 
-  print (max)
+  return max
       
 
 
