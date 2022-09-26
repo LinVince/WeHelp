@@ -1,4 +1,4 @@
-#####first question####
+#####1####
 
 def calculate(min, max, step):
   numList = []
@@ -16,7 +16,7 @@ calculate (4, 8, 2)
 calculate (-1, 2, 2)
 
 
-#####second question####
+#####2####
 def avg(data):
   count = 0
   salary = 0
@@ -51,7 +51,7 @@ avg({
 ]
 })
 
-#####thrid question####
+#####3####
 def func(a):
   def seed(b,c):
     result = a + b*c
@@ -63,7 +63,7 @@ func(5)(1,-5)
 func(-3)(2,9)
 
 
-####forth question####
+####4#### 
 def maxProduct(nums):
   num = int()
   max = float("-inf")
@@ -88,7 +88,7 @@ maxProduct([-1, 0, 2]) # 得到 0
 maxProduct([5,-1, -2, 0]) # 得到 2
 maxProduct([-5, -2]) # 得到 10
 
-####fifth question####
+####5####
 def twoSum(nums, target):
   for i in nums:
     for a in nums:
@@ -102,7 +102,7 @@ print(result) # show [0, 2] because nums[0]+nums[2] is 9
 
 
 
-####sixth question####
+####6####
 def maxZeros(nums):
   count = 0
   max = 0
