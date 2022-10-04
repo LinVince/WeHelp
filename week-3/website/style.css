@@ -1,0 +1,169 @@
+.frame{
+  display:flex;
+  font-size:20px;
+  
+}
+.left{
+  background-color:#FFFFFF;
+  flex:auto;
+  width:400px;
+  margin:8px;
+}
+.desktop-menu{
+  display:flex;
+  justify-content:flex-end;
+  background-color:#FFFFFF;
+  flex:none;
+  width:40%;
+  margin:8px;
+}
+.mobile-menu{
+  margin:8px;
+
+}
+.item{
+  background-color:#FFFFFF;
+  flex:none;
+  width:20%;
+  margin-right:10px;
+  text-align:center;
+}
+
+.welcome{
+  display:flex;
+  height:300px;
+  background-color:#89CFF0;
+  align-items:center;
+  justify-content:center;
+}
+.text{
+  font-size:40px;
+  fone-weight:bold;
+  text-align:center;
+}
+
+.gallery {
+  display:flex;
+  justify-content:center; 
+  margin-top:10px;  
+}
+
+.gallery-name {
+  background-color:#FFFFFF;
+  width:1200px;
+  display:flex;
+  justify-content:center;   
+  gap:10px;
+}
+#name {
+  height:50px;
+  width:50%;
+  #margin-right:8px;
+  background-color:#89CFF0;
+  text-align:left;
+  display:flex;
+  align-items:center;  
+  
+}
+.showcase {
+  width:1200px;
+  background-color:#FFFFFF;
+  display:flex;
+  justify-content:center;
+  #margin-right:5px;
+  gap:8px;
+}
+.photo {
+  width:25%;
+  #margin-right:2px;
+  background-color:#89CFF0;
+  text-align:center;  
+  gap:8px;
+
+}
+body{
+margin:0px;
+}
+
+@media (min-width: 1200px){
+.mobile-menu{
+  display:none;
+}
+
+}
+
+@media(min-width:600px) and (max-width:1199px){
+
+.text{
+  font-size:30px;
+}
+
+.desktop-menu{
+  display:flex;
+  width:50%
+  align-items;center;
+  margin-top:15px;
+}
+.item{
+  font-size:20px;
+}
+.left{
+  margin-top:15px;
+}
+
+.showcase{
+  flex-wrap:wrap;
+}
+.photo{
+  width:45%;
+}
+#name{
+  width:45%;
+}
+.photo img{
+  width:100%;
+}
+.mobile-menu{
+  display:none;
+}
+  
+}
+
+@media(min-width:360px) and (max-width:599px){
+.desktop-menu{
+  display:none;
+}
+.mobile-menu{
+  display:flex;
+  align-items;center;
+  margin-top:15px;
+}
+.gallery-name{
+  flex-wrap:wrap;
+}
+#name{
+  width:90%;
+}
+.left{
+  display:flex;
+  align-items:center;
+}
+.text{
+ font-size:20px;
+}
+.showcase{
+  flex-wrap:wrap;
+}
+.photo{
+  width:90%;
+}
+#name{
+  width:90%;
+}
+.photo img{
+  width:100%;
+}
+
+}
+
+
