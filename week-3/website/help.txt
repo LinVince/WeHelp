@@ -1,0 +1,1 @@
+https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/JSON
