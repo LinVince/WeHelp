@@ -9,7 +9,7 @@
   <body>
     <body onload="displaydata()">
     <script>
-  async function displaydata(){
+ async function displaydata(){
   var requestURL = 'https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json';
   const getData = await fetch(requestURL).then(function(response){
     return response.json();
@@ -94,9 +94,9 @@ displaydata().then((data) => {
     f1.setAttribute('class','photo');    
     f2.setAttribute('class','photo');    
     f3.setAttribute('class','photo');    
-    f4.setAttribute('class','photo'); */
+    f4.setAttribute('class','photo'); 
   
-    /*const t1 = document.createElement('span');
+    const t1 = document.createElement('span');
     t1.innerText = stitles[2];
     const t2 = document.createElement('span');
     t2.innerText = stitles[3];
@@ -224,10 +224,9 @@ displaydata().then((data) => {
       var newt = document.createElement('span');
       newt.innerText = stitles[i+14];
       newf.appendChild(newt)
-    };
-    
+    };    
 });
-    </script>	    
+   </script>	    
     <div class="frame">
       <div class="left">Vince Lin</div>
       <div class="desktop-menu">
@@ -247,7 +246,7 @@ displaydata().then((data) => {
     <div class="gallery">
       <div class="gallery-name">
         <!--<div id="name"><img src="images/lake.jpg" width=80px height=50px></div>
-        <div id="name"><img src="images/lake.jpg" width=80px height=50px><span>Presentation 2</span></div><-->
+        <div id="name"><img src="images/lake.jpg" width=80px height=50px><span>Presentation 2</span></div>-->
       </div> 
     </div>
 
@@ -256,7 +255,7 @@ displaydata().then((data) => {
       <!--<div class="photo"><img src="images/lake.jpg" width=290px>Title 1</div>
 	<div class="photo"><img src="images/lake.jpg" width=290px>Title 2</div>
 	<div class="photo"><img src="images/lake.jpg" width=290px>TItle 3</div>
-	<div class="photo"><img src="images/lake.jpg" width=290px>Title 4</div><-->
+	<div class="photo"><img src="images/lake.jpg" width=290px>Title 4</div>-->
       </div>   
     </div>
      <div class="gallery">
