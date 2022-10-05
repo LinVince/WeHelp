@@ -73,6 +73,14 @@
   #margin-right:5px;
   gap:8px;
 }
+.showcasee {
+  width:1200px;
+  background-color:#FFFFFF;
+  display:flex;
+  justify-content:center;
+  #margin-right:5px;
+  gap:8px;
+}
 .photo {
   width:25%;
   #margin-right:2px;
@@ -114,6 +122,11 @@ margin:0px;
 .showcase{
   flex-wrap:wrap;
 }
+  
+.showcasee{
+  flex-wrap:wrap;
+}
+  
 .photo{
   width:45%;
 }
@@ -154,6 +167,9 @@ margin:0px;
 .showcase{
   flex-wrap:wrap;
 }
+.showcasee{
+  flex-wrap:wrap;
+}
 .photo{
   width:90%;
 }
@@ -165,5 +181,4 @@ margin:0px;
 }
 
 }
-
 
