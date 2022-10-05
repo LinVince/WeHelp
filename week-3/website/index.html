@@ -9,7 +9,7 @@
   <body>
     <body onload="displaydata()">
     <script>
- async function displaydata(){
+  async function displaydata(){
   var requestURL = 'https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json';
   const getData = await fetch(requestURL).then(function(response){
     return response.json();
@@ -244,8 +244,7 @@ function load(){
       btn.style.display = "none";
       }    
 
-
-   </script>	    
+    </script>	     
     <div class="frame">
       <div class="left">Vince Lin</div>
       <div class="desktop-menu">
@@ -265,7 +264,7 @@ function load(){
     <div class="gallery">
       <div class="gallery-name">
         <!--<div id="name"><img src="images/lake.jpg" width=80px height=50px></div>
-        <div id="name"><img src="images/lake.jpg" width=80px height=50px><span>Presentation 2</span></div>-->
+        <div id="name"><img src="images/lake.jpg" width=80px height=50px><span>Presentation 2</span></div><-->
       </div> 
     </div>
 
@@ -274,10 +273,10 @@ function load(){
       <!--<div class="photo"><img src="images/lake.jpg" width=290px>Title 1</div>
 	<div class="photo"><img src="images/lake.jpg" width=290px>Title 2</div>
 	<div class="photo"><img src="images/lake.jpg" width=290px>TItle 3</div>
-	<div class="photo"><img src="images/lake.jpg" width=290px>Title 4</div>-->
+	<div class="photo"><img src="images/lake.jpg" width=290px>Title 4</div><-->
       </div>   
     </div>
-      <div class="gallery">
+     <div class="gallery">
       <div class="showcase">
         <!--<div class="photo"><img src="images/lake.jpg" width=290px>TItle 5</div>
 	<div class="photo"><img src="images/lake.jpg" width=290px>Title 6</div>
@@ -293,7 +292,7 @@ function load(){
       <div class="showcase">
       </div>   
     </div>
-  <div class="gallery">
+    <div class="gallery">
       <button onclick='load();'>More</button>    
     </div>
   </body>
