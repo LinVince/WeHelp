@@ -136,11 +136,11 @@ displaydata().then((data) => {
     f3.appendChild(t3);
     f4.appendChild(t4);*/
   
-    const showcasee = document.querySelector('.showcasee');
+    const showcase2 = document.querySelectorAll('.showcase')[1];
     for (let i = 0; i < 4; i++){
       var newf = document.createElement('div');
       newf.setAttribute('class','photo');
-      showcasee.appendChild(newf);
+      showcase2.appendChild(newf);
       var img = document.createElement('img');
       img.setAttribute('src',photos[i+6]);
       img.setAttribute('width','290px');
@@ -197,7 +197,34 @@ displaydata().then((data) => {
     f6.appendChild(t6);
     f7.appendChild(t7);
     f8.appendChild(t8);*/
-   
+    const showcase3 = document.querySelectorAll('.showcase')[2];
+    for (let i = 0; i < 4; i++){
+      var newf = document.createElement('div');
+      newf.setAttribute('class','photo');
+      showcase3.appendChild(newf);
+      var img = document.createElement('img');
+      img.setAttribute('src',photos[i+10]);
+      img.setAttribute('width','290px');
+      img.setAttribute('height','200px');
+      newf.appendChild(img);
+      var newt = document.createElement('span');
+      newt.innerText = stitles[i+10];
+      newf.appendChild(newt)
+    };
+    const showcase4 = document.querySelectorAll('.showcase')[3];
+    for (let i = 0; i < 4; i++){
+      var newf = document.createElement('div');
+      newf.setAttribute('class','photo');
+      showcase4.appendChild(newf);
+      var img = document.createElement('img');
+      img.setAttribute('src',photos[i+14]);
+      img.setAttribute('width','290px');
+      img.setAttribute('height','200px');
+      newf.appendChild(img);
+      var newt = document.createElement('span');
+      newt.innerText = stitles[i+14];
+      newf.appendChild(newt)
+    };
     
 });
     </script>	    
