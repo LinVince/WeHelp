@@ -83,9 +83,11 @@ displaydata().then((data) => {
       img.setAttribute('width','290px');
       img.setAttribute('height','200px');
       newf.appendChild(img);
-      var newt = document.createElement('span');
+      var newt = document.createElement('div');
+      newt.setAttribute('class','desc');
       newt.innerText = stitles[i+2];
-      newf.appendChild(newt)
+      newf.appendChild(newt);
+      
     };
     /*f1 = document.createElement('div');
     f2 = document.createElement('div');
@@ -94,9 +96,9 @@ displaydata().then((data) => {
     f1.setAttribute('class','photo');    
     f2.setAttribute('class','photo');    
     f3.setAttribute('class','photo');    
-    f4.setAttribute('class','photo'); 
+    f4.setAttribute('class','photo'); */
   
-    const t1 = document.createElement('span');
+    /*const t1 = document.createElement('span');
     t1.innerText = stitles[2];
     const t2 = document.createElement('span');
     t2.innerText = stitles[3];
@@ -146,9 +148,10 @@ displaydata().then((data) => {
       img.setAttribute('width','290px');
       img.setAttribute('height','200px');
       newf.appendChild(img);
-      var newt = document.createElement('span');
+      var newt = document.createElement('div');
+      newt.setAttribute('class','desc');
       newt.innerText = stitles[i+6];
-      newf.appendChild(newt)
+      newf.appendChild(newt);
     };
   
     /*const f5 = document.createElement('div');
@@ -207,10 +210,14 @@ displaydata().then((data) => {
       img.setAttribute('width','290px');
       img.setAttribute('height','200px');
       newf.appendChild(img);
-      var newt = document.createElement('span');
+      var newt = document.createElement('div');
+      newt.setAttribute('class','desc');
       newt.innerText = stitles[i+10];
-      newf.appendChild(newt)
+      newf.appendChild(newt);
+      showcase3.style.display = "none";
     };
+  
+  
     const showcase4 = document.querySelectorAll('.showcase')[3];
     for (let i = 0; i < 4; i++){
       var newf = document.createElement('div');
@@ -221,11 +228,23 @@ displaydata().then((data) => {
       img.setAttribute('width','290px');
       img.setAttribute('height','200px');
       newf.appendChild(img);
-      var newt = document.createElement('span');
+      var newt = document.createElement('div');
+      newt.setAttribute('class','desc');
       newt.innerText = stitles[i+14];
-      newf.appendChild(newt)
-    };    
+      newf.appendChild(newt);
+      showcase4.style.display = "none";
+    };      
 });
+function load(){
+      let showcase3 = document.querySelectorAll('.showcase')[2];
+      let showcase4 = document.querySelectorAll('.showcase')[3];
+      showcase3.style.display = "flex";
+      showcase4.style.display = "flex";
+      let btn = document.querySelector('button');
+      btn.style.display = "none";
+      }    
+
+
    </script>	    
     <div class="frame">
       <div class="left">Vince Lin</div>
