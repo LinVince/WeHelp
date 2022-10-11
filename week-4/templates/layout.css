@@ -42,6 +42,15 @@
   font-weight:bold;
 }
 
+#errormessage{
+  width:800px;
+  height:100px;
+  margin-top:50px;
+  text-align:center;  
+  font-size:36px;
+  font-weight:bold;
+}
+
 #form{
   display:flex;
   flex-direction: column;
