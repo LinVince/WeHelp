@@ -7,6 +7,13 @@
     <link rel="stylesheet" type="text/css" href="layout.css">
   </head>
   <body>
+    <script>
+      const error_msg = document. getElementById('errormessage');
+      const query_msg = window.location.search;
+      const urlParams = new URLSearchParams(query_msg);
+      const message = urlParams.get('message')
+      error_msg.innerText = message;
+    </script>  
     <div class="frame">
       <div class="border-login">
         <div id="welcome">失敗頁面</div>
