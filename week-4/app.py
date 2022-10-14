@@ -28,6 +28,11 @@ app = Flask (__name__)
 #app.debug = True
 app.secret_key = "Thisismysecretkey000000111111"
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 @app.route('/signin', methods = ['GET','POST'])
 def signin():
     if request.method == 'POST':
@@ -43,7 +48,7 @@ def signin():
         
 
         if username == '' and password == '':
-            return render_template('signin.html')
+            return redirect('/')
             
 
         elif username == '' or password == '':
@@ -64,13 +69,8 @@ def signin():
             except:
                 return redirect(url_for('error',message="帳號或密碼輸入錯誤"))
 
-    return render_template('signin.html')
+    return render_template('index.html')
 
-@app.route('/square',  methods = ['POST'])
-def square_():
-    inputint = request.form['inputint']
-    url = '/square/' + inputint
-    return redirect(url)
 
 
 @app.route('/member')
@@ -78,8 +78,15 @@ def member():
     if session['user_login'] == True:
         return render_template('member.html')
     else:
-        return redirect(url_for('signin'))
+        return redirect('/')
 
+
+#沒有辦法一次拿完form資料後跳到square/整數，需要中繼站在導一次
+@app.route('/square',  methods = ['POST'])
+def square_():
+    inputint = request.form['inputint']
+    url = '/square/' + inputint
+    return redirect(url)
 
 @app.route('/square/<int:inputint>')
 def square(inputint):    
@@ -90,7 +97,7 @@ def square(inputint):
 @app.route('/signout')
 def signout():
     session['user_login'] = False
-    return redirect(url_for('signin'))
+    return redirect('/')
 
 
 @app.route('/error', methods = ['GET','POST'])
@@ -98,6 +105,7 @@ def error():
     return render_template('error.html')
 
 
-
+#if __name__ == "__main__":
+app.run(port = 3000)
 
 
