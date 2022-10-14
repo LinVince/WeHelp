@@ -40,6 +40,7 @@ def signin():
         #html name=""
         username = request.form['ac']
         password = request.form['pw']
+        
 
         if username == '' and password == '':
             return render_template('signin.html')
@@ -65,12 +66,26 @@ def signin():
 
     return render_template('signin.html')
 
+@app.route('/square',  methods = ['POST'])
+def square_():
+    inputint = request.form['inputint']
+    url = '/square/' + inputint
+    return redirect(url)
+
+
 @app.route('/member')
 def member():
     if session['user_login'] == True:
         return render_template('member.html')
     else:
         return redirect(url_for('signin'))
+
+
+@app.route('/square/<int:inputint>')
+def square(inputint):    
+    square_result = inputint * inputint
+    return render_template('square.html', square_result = square_result)
+
  
 @app.route('/signout')
 def signout():
