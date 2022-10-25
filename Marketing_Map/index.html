@@ -1,139 +1,27 @@
+  <!-- Hero -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marketing</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="layout.css">
+  </head>
 
-    <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="styles.css" />      
-   </head>
-     <!-- Hero -->
-  	
-   
-   
-    <section class="et-hero-tabs">        
+<section class="et-hero-tabs">
+  
     <div class="front-page"> 
       <div class="headline">Marketing Directing Map</div>           
-    <canvas id="screen" width="500px" height="500px"></canvas>
-      <script>
-      const canvas = document.querySelector("#screen");
-const ctx = canvas.getContext("2d");
-
-/* constants */
-const BG_COLOR = "#000000";
-const COLOR = "#FA4616";
-
-/* settings */
-const CIRCLE_LINE_WIDTH = 5;
-const CICLE_RADIUS = 200;
-const POINTS_AMOUNT = 100;
-const POINTS_RADIUS = 500;
-
-/* util functions */
-const degToRad = deg => deg * (Math.PI / 180);
-const getPos = deg => { 
-	return {
-		x: Math.cos(deg) * CICLE_RADIUS, 
-		y: Math.sin(deg) * CICLE_RADIUS
-	} 
-}
-
-const drawCircle = (x, y, lineW, rad, stroke, fill) => {
-	ctx.beginPath();
-	ctx.lineWidth = lineW;
-	ctx.arc(x, y, rad, 0, 2 * Math.PI, false);
-	if (stroke) ctx.stroke();
-	if (fill) ctx.fill();
-	ctx.closePath();
-}
-
-const drawLine = (x1, y1, x2, y2) => {
-	ctx.beginPath();
-	ctx.moveTo(x1, y1);
-	ctx.lineTo(x2, y2);
-	ctx.stroke();
-	ctx.closePath();
-}
-
-/* variables */
-let pointsArrL = [];
-let pointsArrR = [];
-
-let wave = 280;
-let pulse = 1;
-
-/* variable init */
-for (let i = 0; i < POINTS_AMOUNT; i++) {
-	let rotationDeg = i * degToRad(360 / (POINTS_AMOUNT * 4));
-	let pos = getPos(rotationDeg);
-
-	pointsArrL.push({
-		x: pos.x,
-		y: pos.y,
-		rotationDeg
-	});
-
-	pointsArrR.push({
-		x: -pos.x,
-		y: -pos.y,
-		rotationDeg
-	})
-}
-
-/* loop */
-ctx.translate(canvas.width / 2, canvas.height / 2);
-const loop = () => {
-	ctx.fillStyle = BG_COLOR;
-	ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
-
-	ctx.strokeStyle = COLOR;
-	drawCircle(0, 0, CIRCLE_LINE_WIDTH, CICLE_RADIUS, true, false);
-
-	ctx.fillStyle = COLOR;
-	for (let i = 0; i < POINTS_AMOUNT; i++) {
-		let pointL = pointsArrL[i];
-		let pointR = pointsArrR[i];
-
-		let rotationDegL = pointL.rotationDeg;
-		let rotationDegR = pointR.rotationDeg;
-
-		// drawCircle(pointL.x, pointL.y, 0, POINTS_RADIUS, false, true);
-		// drawCircle(pointR.x, pointR.y, 0, POINTS_RADIUS, false, true);
-
-		ctx.lineWidth = 1.5 + Math.sin( i * (degToRad(360 / POINTS_AMOUNT)));
-		//ctx.strokeStyle = `hsla(289, ${80 + Math.sin(wave) * 10}%, 50%, 1)`;
-		drawLine(pointL.x, pointL.y, pointR.x, pointR.y);
-
-		rotationDegL += degToRad(0.25 + Math.sin(degToRad(wave / Math.PI / 2)));
-		const newPosL = getPos(rotationDegL);
-
-		rotationDegR += -degToRad(0.13 + Math.sin(degToRad(wave / Math.PI / 4)));
-		const newPosR = getPos(rotationDegR);
-
-		pointsArrL[i].x = newPosL.x;
-		pointsArrL[i].y = newPosL.y;
-		pointsArrL[i].rotationDeg = rotationDegL;
-
-		pointsArrR[i].x = newPosR.x;
-		pointsArrR[i].y = newPosR.y;
-		pointsArrR[i].rotationDeg = rotationDegR;
-	}
-
-	wave = (wave > 360) ? 0 : wave + pulse;
-	requestAnimationFrame(loop);
-}
-
-loop();
-      </script>
+      <div><canvas id="screen" width="500px" height="500px"></canvas></div>
+      <script src="animation.js"></script>
   
-    </div>
-  
-  
-    <div class="et-hero-tabs-container">	    
-      <a class="et-hero-tab" href="#tab-es6">ES6</a>
-      <a class="et-hero-tab" href="#tab-flexbox">Flexbox</a>
-      <a class="et-hero-tab" href="#tab-react">React</a>
+    </div>  
+    
+    <div class="et-hero-tabs-container"> 
+      
+      <a class="et-hero-tab" href="#tab-es6">Content</a>
+      <a class="et-hero-tab" href="#tab-flexbox">Channel</a>
+      <a class="et-hero-tab" href="#tab-react">Compete</a>
       <a class="et-hero-tab" href="#tab-angular">Angular</a>
       <a class="et-hero-tab" href="#tab-other">Other</a>
       <span class="et-hero-tab-slider"></span>
@@ -143,28 +31,232 @@ loop();
   <!-- Main -->
   <main class="et-main">
     <section class="et-slide" id="tab-es6">
-      <h1>ES6</h1>
-      <h3>something about es6</h3>
+      <div class="content">
+      <h1 style="margin:0px;">Content</h1>
+        <h3>Product (left) to Market (right) oriented</h3>
+         <div class="list_container">
+          <ul>
+            <button>Manual</button>
+            <li>Admin Manual</li>
+            <li>User Manual</li>
+            <li>Setup Guidelines</li>
+          </ul>
+           <ul>
+             <button>Document</button>
+            <li>Whitepaper</li>
+            <li>Case Study</li>
+             <li>Datasheet</li>
+          </ul>
+           <ul>
+             <button>Product Page</button>
+            <li>Functions</li>
+            <li>Benefits</li>
+             <li>Problem Solving</li>
+             <li>Specification</li>
+             <li>Landing</li>         
+          </ul>
+           <ul>
+             <button>Facade</button>
+            <li style="list-style-type:none">Paragraph/Video/Banner</li>
+            <li>Eye-catching Heading</li>
+             <li>Problem Solving</li>
+             <li>Compliance</li>
+             <li>Functions</li> 
+             <li>Benefits & Values</li> 
+             <li>Segement</li>
+             <li>Review</li>
+             <li>Promotion & Landing</li>
+          </ul>
+           <ul>
+             <button>News</button>
+            <li>Updates</li>
+            <li>Launch</li> 
+            <li>Promotion</li>  
+             <li>Branding</li> 
+          </ul>
+           <ul>
+             <button>Arts</button>
+            <li style="list-style-type:none; font-weight:bold;">Line</li>
+            <li>curved not jagged</li> 
+           <li style="list-style-type:none; font-weight:bold;margin-top:5px;">Shape</li>  
+             <li>organic</li> 
+             <li>geometric</li> 
+              <li style="list-style-type:none;font-weight:bold;;margin-top:5px;">Color</li>
+             <li>hue</li> 
+             <li>value</li> 
+             <li>intensity</li> 
+             <li style="list-style-type:none;font-weight:bold;;margin-top:5px;">Typography</li>
+             <li>size</li> 
+             <li>color</li> 
+             <li>space</li> 
+         <li style="list-style-type:none;font-weight:bold;margin-top:5px;">Texture</li>           
+          </ul>
+        </div>
+      </div>
     </section>
+    
+      
     <section class="et-slide" id="tab-flexbox">
-      <h1>Flexbox</h1>
-      <h3>something about flexbox</h3>
+       <h1 style="margin:0px;">Channel</h1>
+        <h3>Static (left) to Dynamic (right)</h3>
+         <div class="list_container">
+          <ul>
+            <button>Website</button>
+            <li>Wisecure-tech.com</li>
+            <li>FIDO Showcase</li>
+            <li>Opportunity Network</li>
+          </ul>
+           <ul>
+            <button>PR</button>
+            <li>iThome</li>
+            <li>說資安</li>
+            <li>CIO 經理人</li>
+            <li>Email</li>
+          </ul>
+           <ul>
+            <button>Social Media</button>
+            <li>Linkedin</li>
+            <li>Facebook</li>
+             <li>Medium</li>
+          </ul>
+           <ul>
+            <button>Angency</button>
+            <li>Valoso</li>
+             <li style="list-style-type:none;">Global</li>
+            <li>Media Gate Group</li>
+              <li style="list-style-type:none;">Global, Germany</li>          
+          </ul>
+            <ol>
+            <button>Brand Management</button>
+            <li>Locate brand champions<br>
+           (loyal customer)</li>
+            <li>Segement customer base <br>(OEM/VAR/Int/Dis)<br>(loyal/revenue/max expense)</li> 
+              <li>Upgrade service</li>    
+              <li>Increase customer loyalty<br>(reward/rebate/incentive)</li>  
+              <li>Build market credibility <br>(video/podcast)<br>(tradeshow/seminar/conference)</li>  
+          </ol>
     </section>
+    
+    
+        
+    
     <section class="et-slide" id="tab-react">
-      <h1>React</h1>
-      <h3>something about react</h3>
-    </section>
-    <section class="et-slide" id="tab-angular">
+     <h1 style="margin:0px;">Compete</h1>
+        <h3></h3>
+         <div class="list_container">
+          <ul style="text-align:center;">
+            <button>VeloCrypt</button>
+            <a href="https://www.swissbit.com/blog"><li>Swissbit</li></a>                      
+          </ul>           
+          <ul>
+            <button>FileAegis</button>
+            <a href="https://www.akamai.com/"><li>Akamai</li></a>
+            <a href="https://www.openfind.com.tw/taiwan/secusharepro.html?gclid=CjwKCAjw79iaBhAJEiwAPYwoCAuacsKPDhtmrq0EaVJk8hPum5pGuEx21nmaQIjMeaUL_QSzWhZX-hoCqygQAvD_BwE#structure"><li>SecureShare Pro</li></a>
+            <a href="http://trustviewer.com/en"><li>TrustViewer</li></a> 
+          </ul>
+           <ul style="text-align:center;">
+            <button>Password-less</button>
+            <a href="https://www.webcomm.com.tw/blog/"><li>偉康</li></a>
+            <a href="https://www.changingtec.com/news.jsp"><li>全景</li></a>
+            <a href="https://www.tw.gotrustid.com/all-post"><li>動信</li></a>
+          </ul>
+            <ul style="text-align:center;">
+              <button>Trend</button>
+              <a href="https://www.nist.gov/cybersecurity"><li>NIST</li></a>
+            <a href="https://www.ncsc.gov.uk/"><li>NCSC</li></a>
+            <a href="https://www.enisa.europa.eu/"><li>ENISA</li></a>           
+          </ul>           
+           </dlv>
+      </section>
+      
+      
+      
+      
+      <section class="et-slide" id="tab-angular">
       <h1>Angular</h1>
       <h3>something about angular</h3>
     </section>
     <section class="et-slide" id="tab-other">
       <h1>Other</h1>
       <h3>something about other</h3>
-    </section>  
-  
+    </section>
   </main>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
- <script src="app.js"></script>
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src = "nav-bar.js"></script>
+<!--script>class StickyNavigation {
+    
+    constructor() {
+        this.currentId = null;
+        this.currentTab = null;
+        this.tabContainerHeight = 70;
+        let self = this;
+        $('.et-hero-tab').click(function() { 
+            self.onTabClick(event, $(this)); 
+        });
+        $(window).scroll(() => { this.onScroll(); });
+        $(window).resize(() => { this.onResize(); });
+    }
+    
+    onTabClick(event, element) {
+        event.preventDefault();
+        let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
+        $('html, body').animate({ scrollTop: scrollTop }, 600);
+    }
+    
+    onScroll() {
+        this.checkTabContainerPosition();
+    this.findCurrentTabSelector();
+    }
+    
+    onResize() {
+        if(this.currentId) {
+            this.setSliderCss();
+        }
+    }
+    
+    checkTabContainerPosition() {
+        let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
+        if($(window).scrollTop() > offset) {
+            $('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
+        } 
+        else {
+            $('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
+        }
+    }
+    
+    findCurrentTabSelector(element) {
+        let newCurrentId;
+        let newCurrentTab;
+        let self = this;
+        $('.et-hero-tab').each(function() {
+            let id = $(this).attr('href');
+            let offsetTop = $(id).offset().top - self.tabContainerHeight;
+            let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
+            if($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+                newCurrentId = id;
+                newCurrentTab = $(this);
+            }
+        });
+        if(this.currentId != newCurrentId || this.currentId === null) {
+            this.currentId = newCurrentId;
+            this.currentTab = newCurrentTab;
+            this.setSliderCss();
+        }
+    }
+    
+    setSliderCss() {
+        let width = 0;
+        let left = 0;
+        if(this.currentTab) {
+            width = this.currentTab.css('width');
+            left = this.currentTab.offset().left;
+        }
+        $('.et-hero-tab-slider').css('width', width);
+        $('.et-hero-tab-slider').css('left', left);
+    }
+    
+}
+
+new StickyNavigation();
+</script-->
 </html>
