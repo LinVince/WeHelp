@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
+  </head>
+  <body>
+    
+    <div class="frame">
+      <div class="border-login">
+        <div id="welcome">失敗頁面</div>
+        <div id="errormessage">Default Message</div>
+        <!--<form id="form" action=" {{ url_for('signin') }}" method="post">
+          <div>
+          <label id="aclb" for="account">帳號</label>
+          <input type="text" id="account" name="ac">
+          </div>
+          <div> 
+          <label id="pwlb" for="password">密碼</label>
+          <input type="password" id="password" name="pw">            
+          </div>
+          <input id="button" type="submit" value="登入">
+          </form>-->
+        
+      </div>
+    </div>
+      <script>
+      const error_msg = document.getElementById('errormessage');
+      const query_msg = window.location.search;
+      const urlParams = new URLSearchParams(query_msg);
+      const message = urlParams.get('message');
+      error_msg.innerText = message;
+    </script>  
+  </body>    
+</html>
