@@ -33,7 +33,7 @@ class Database:
     def __repr__(self):
         return f'<Database: {self.database}>'
 
-mydb = Database('root','811223','website')
+mydb = Database('root','','website')
 
 #users = []
 #users.append(User(id=1,username='test',password='test'))
