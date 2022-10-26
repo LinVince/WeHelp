@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="layout.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="../static/marketing_map.css">
   </head>
 
 <section class="et-hero-tabs">
@@ -13,7 +17,8 @@
     <div class="front-page"> 
       <div class="headline">Marketing Directing Map</div>           
       <div><canvas id="screen" width="500px" height="500px"></canvas></div>
-      <script src="animation.js"></script>
+      
+      <script src="../static/animation.js"></script>
   
     </div>  
     
@@ -32,15 +37,70 @@
   <main class="et-main">
     <section class="et-slide" id="tab-es6">
       <div class="content">
-      <h1 style="margin:0px;">Content</h1>
+       <h1 style="margin:0px;">Content</h1>
         <h3>Product (left) to Market (right) oriented</h3>
-         <div class="list_container">
+         <div class="list_container">        
           <ul>
             <button>Manual</button>
-            <li>Admin Manual</li>
-            <li>User Manual</li>
-            <li>Setup Guidelines</li>
-          </ul>
+            <li><a href="#popup1">Admin Manual</a></li>
+            <div id="popup1" class="overlay">
+              <div class="popup"><a class="close" href="#tab-es6">&times;</a>
+                <div class="content" style="display:flex ; flex-direction: row;justify-content: center;">
+                 <ul style="text-align: left;list-style-type:none;">                       
+                    <li style="font-weight: bolder;">FileAegis</li> 
+                    <li>English Version</li>
+                    <li>Chinese Version</li>
+                    <li>Japanese</li>
+                  </ul>
+                  <ul style="text-align: left;list-style-type:none;">                       
+                    <li style="font-weight: bolder;">VeloCrypt</li> 
+                    <li>English Version</li>
+                    <li>Chinese Version</li>
+                    <li>Japanese</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <li><a href="#popup2">User Manual</a></li>
+            <div id="popup2" class="overlay">
+              <div class="popup"><a class="close" href="#tab-es6">&times;</a>
+               <div class="content" style="display:flex ; flex-direction: row;justify-content: center;">
+                 <ul style="text-align: left;list-style-type:none;">                       
+                    <li style="font-weight: bolder;">FileAegis</li> 
+                    <li>English Version</li>
+                    <li>Chinese Version</li>
+                    <li>Japanese</li>
+                  </ul>
+                  <ul style="text-align: left;list-style-type:none;">                       
+                    <li style="font-weight: bolder;">VeloCrypt</li> 
+                    <li>English Version</li>
+                    <li>Chinese Version</li>
+                    <li>Japanese</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+              <li><a href="#popup3">Setup Guidelines</a></li>
+            <div id="popup3" class="overlay">
+              <div class="popup"><a class="close" href="#tab-es6">&times;</a>
+                <div class="content" style="display:flex ; flex-direction: row;justify-content: center;">
+                 <ul style="text-align: left;list-style-type:none;">                       
+                    <li style="font-weight: bolder;">FileAegis</li> 
+                    <li>English Version</li>
+                    <li>Chinese Version</li>
+                    <li>Japanese</li>
+                  </ul>
+                  <ul style="text-align: left;list-style-type:none;">                       
+                    <li style="font-weight: bolder;">VeloCrypt</li> 
+                    <li>English Version</li>
+                    <li>Chinese Version</li>
+                    <li>Japanese</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ul> 
+
            <ul>
              <button>Document</button>
             <li>Whitepaper</li>
@@ -102,13 +162,13 @@
          <div class="list_container">
           <ul>
             <button>Website</button>
-            <li>Wisecure-tech.com</li>
-            <li>FIDO Showcase</li>
-            <li>Opportunity Network</li>
+            <a href="https://www.wisecure-tech.com"><li>wisecure-tech</li></a>
+            <a href="https://fidoalliance.org/fido-certified-showcase/"><li>FIDO Showcase</li>
+            <a href="https://www.opportunitynetwork.com/"><li>Opportunity Network</li></a>
           </ul>
            <ul>
             <button>PR</button>
-            <li>iThome</li>
+            <a href="https://www.ithome.com.tw"><li>iThome</li></a>
             <li>說資安</li>
             <li>CIO 經理人</li>
             <li>Email</li>
@@ -122,18 +182,18 @@
            <ul>
             <button>Angency</button>
             <li>Valoso</li>
-             <li style="list-style-type:none;">Global</li>
+             <li style="list-style-type:none;font-size:smaller;">- Global</li>
             <li>Media Gate Group</li>
-              <li style="list-style-type:none;">Global, Germany</li>          
+              <li style="list-style-type:none;font-size:smaller;">- Global, Germany</li>          
           </ul>
-            <ol>
+            <ol class="note">          
             <button>Brand Management</button>
-            <li>Locate brand champions<br>
-           (loyal customer)</li>
-            <li>Segement customer base <br>(OEM/VAR/Int/Dis)<br>(loyal/revenue/max expense)</li> 
+            <li>Locate brand champions</li>           
+            <li>Segement customer base <br><span style="font-size:smaller;">(OEM/VAR/Int/Dis)
+                <br><span>(loyal/revenue/max expense)</li> 
               <li>Upgrade service</li>    
-              <li>Increase customer loyalty<br>(reward/rebate/incentive)</li>  
-              <li>Build market credibility <br>(video/podcast)<br>(tradeshow/seminar/conference)</li>  
+              <li>Increase customer loyalty<br><span style="font-size:smaller;">(reward/rebate/incentive)</li>  
+              <li>Build market credibility <br><span style="font-size:smaller;">(video/podcast)<br>(tradeshow/seminar/conference)</li>                
           </ol>
     </section>
     
@@ -182,7 +242,7 @@
     </section>
   </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src = "nav-bar.js"></script>
+<script src="../static/nav-bar.js"></script>
 <!--script>class StickyNavigation {
     
     constructor() {

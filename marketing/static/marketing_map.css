@@ -29,8 +29,31 @@ body {
   transform: translate(-50%, -50%);
 }
 
-a {
+a{
   text-decoration: none;
+}
+
+ul a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0);
+  color: black;
+  transition: 1s;  
+}
+
+ol a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0);
+  color: black;
+  transition: 1s;
+  
+}
+
+ul a:hover{
+  text-decoration-color: rgba(0, 0, 0, 1);
+}
+
+ol a:hover{
+  text-decoration-color: rgba(0, 0, 0, 1);
 }
 
 .et-hero-tabs,
@@ -47,7 +70,7 @@ a {
 }
 
 .content{
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -146,4 +169,54 @@ ul, ol{
   margin:20px
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  margin: 250px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+.popup .close {
+  position: relative;
+  top: 0px;
+  right: -99%;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .content {
+  max-height: 70%;
+  overflow: visible;
+}
 
+ .note{
+  transition: 0.5s; 
+  opacity: 0.2;
+  cursor: none;
+  
+  }
+
+  .note:hover{
+    opacity: 1;
+
+  }

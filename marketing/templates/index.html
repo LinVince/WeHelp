@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
+  </head>
+  <body>
+    <div class="frame">
+      <div class="border">
+        <div id="welcome">歡迎光臨，請註冊登入系統</div>
+        <div class="navigation">註冊帳號</div>
+        <form id="form" action=" {{ url_for('signup') }}" method="post">
+          <div>
+          <label id="acnm" for="name">姓名</label>
+          <input type="text" id="name" name="name">
+          </div>
+          <div>
+          <label id="aclb" for="account">帳號</label>
+          <input type="text" id="account" name="account">
+          </div>
+          <div> 
+          <label id="pwlb" for="password">密碼</label>
+          <input type="password" id="password" name="password">            
+          </div>
+          <input id="button" type="submit" value="註冊">
+          </form>         
+      </div>
+    </div>
+    <div class="frame">
+      <div class="border">
+        <div class="navigation">登入系統</div>
+        <form id="form2" action=" {{ url_for('signin') }}" method="post">
+          <div>
+          <label id="aclb" for="account">帳號</label>
+          <input type="text" id="account_login" name="ac">
+          </div>
+          <div> 
+          <label id="pwlb" for="password">密碼</label>
+          <input type="password" id="password_login" name="pw">            
+          </div>
+          <input id="button_login" type="submit" value="登入">
+          </form>         
+      </div>
+    </div>
+
+
+
+
+    <!--<div class="frame_2">
+     <div class="border_2">       
+        <div class="navigation">計算正整數的平方</div>
+        <form id="form" action = "/square" method = 'post'>
+          <div>
+          <label id="int" for="int">正整數</label>
+          <input type="text" id="inputint" name="inputint">
+          </div>
+          <input id="button" type="submit" value="計算">
+        </form>         
+      </div>
+    </div>-->  
+   <!-- <script>
+        也可以用這個方法，用JavaScript 取 input 的值，用 window.location.href 把網址換掉
+        const number = document.getElementById('inputint');
+        const button = document.getElementById('button_');
+        button.addEventListener('click', function(){
+        window.location.href = 'square/'+ number.value
+        });
+</script>-->
+
+
+  </body>    
+</html>
