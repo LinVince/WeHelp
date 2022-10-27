@@ -1,4 +1,5 @@
 import mysql.connector
+import bcrypt
 from flask import (
     Flask,
     redirect,
@@ -26,7 +27,7 @@ class User:
 class Database:
 
     def __init__(self,user,password,database):
-        self.user = user
+        self.user = user        
         self.password = password
         self.database = database
 
@@ -34,6 +35,7 @@ class Database:
         return f'<Database: {self.database}>'
 
 mydb = Database('root','','website')
+
 
 #users = []
 #users.append(User(id=1,username='test',password='test'))
@@ -76,8 +78,8 @@ def signin():
 
     #html name=""
     account = request.form['ac']
-    password = request.form['pw']
-    
+    password = request.form['pw']    
+    password = password.encode('utf-8')
 
     if account == '' and password == '':
         return redirect('/')
@@ -89,20 +91,32 @@ def signin():
     #if the login account matches any of the accounts in the list
     #there will only one so [0]
     else:
-        query = "SELECT * FROM member WHERE username =  %s AND password = %s"
+        query = "SELECT * FROM member WHERE username =  %s"
         #Avoid "unread result error"
         mycursor = connection.cursor(buffered=True)
-        mycursor.execute(query, (account,password))
+
+        #Process the password and the salt
+
+        mycursor.execute(query, (account,))
         connection.commit()
         myresult = mycursor.fetchall()
-        
+
         if len(myresult) == 1:
-            #let the server get the cookie so that the login status can remain
-            session['user_id'] = myresult[0][1]
-            session['user_account'] = myresult[0][2]
-            session['user_login'] = True
-            return redirect(url_for('member'))
-        
+            salt = myresult[0][4]
+            salt = salt.encode('utf-8')
+            hashed_pw = bcrypt.hashpw(password,salt)
+            hashed_pw = hashed_pw.decode('utf-8')
+
+            if hashed_pw == myresult[0][3]: 
+                #let the server get the cookie so that the login status can remain
+                session['user_id'] = myresult[0][1]
+                session['user_account'] = myresult[0][2]
+                session['user_login'] = True
+                return redirect(url_for('member'))
+            
+            else:
+                return redirect(url_for('error',message="帳號或密碼輸入錯誤"))
+
         else:
             return redirect(url_for('error',message="帳號或密碼輸入錯誤"))
     
@@ -133,6 +147,11 @@ def signup():
     name = request.form['name']
     account = request.form['account']
     password = request.form['password']
+    password = password.encode('utf-8')
+    salt = bcrypt.gensalt()
+    password = bcrypt.hashpw(password,salt)
+    salt = salt.decode('utf-8')
+    password = password.decode('utf-8')
     
     if name == '' or account == '' or password == '':
         return redirect('/')
@@ -149,9 +168,9 @@ def signup():
             return redirect(url_for('error',message="帳號已經存在"))
 
         else:
-
-            query = """INSERT INTO member (name, username, password) VALUES (%s, %s, %s)"""
-            mycursor.execute(query, (name, account, password))
+            
+            query = """INSERT INTO member (name, username, password, salt) VALUES (%s, %s, %s, %s)"""
+            mycursor.execute(query, (name, account, password, salt))
             connection.commit()
 
             
@@ -164,7 +183,24 @@ def signup():
 def member():
     if session['user_login'] == True:    
         name = session['user_id']
-        return render_template('member.html', name = name)
+        connection = mysql.connector.connect(user=mydb.user, 
+                                            password=mydb.password,
+                                            host='127.0.0.1',
+                                            database=mydb.database
+                                            )
+        mycursor = connection.cursor(buffered=True)
+        query = """SELECT member.name, message.content
+                FROM message
+                LEFT JOIN member ON message.member_id = member.id;"""
+        mycursor.execute(query)    
+        myresult = mycursor.fetchall()
+        all_comment = []
+        for i in myresult:
+            all_comment.append(i[0] + ": " + i[1])
+
+
+        return render_template('member.html', name = name, all_comment = all_comment)
+    
     else:
         return redirect('/')
 
@@ -191,6 +227,33 @@ def signout():
 @app.route('/error', methods = ['GET','POST'])
 def error():
     return render_template('error.html')
+
+
+@app.route('/comment',methods = ['POST'])
+def comment():
+    connection = mysql.connector.connect(user=mydb.user, 
+                                            password=mydb.password,
+                                            host='127.0.0.1',
+                                            database=mydb.database
+                                            )
+    comment = request.form['comment']
+    name = session['user_id']
+    account = session['user_account']
+    mycursor = connection.cursor(buffered=True)
+    
+    if comment != '':
+        query = """SELECT id FROM member WHERE username = %s"""
+        mycursor.execute(query,(account,))    
+        myresult = mycursor.fetchone()
+        member_id = myresult[0]
+        
+        query = """INSERT INTO message (member_id, content) VALUES (%s, %s)"""
+        mycursor.execute(query, (member_id, comment))
+        connection.commit()    
+        return redirect('/member')
+    
+
+    return redirect('/member')
 
 
 #if __name__ == "__main__":

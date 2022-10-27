@@ -22,10 +22,29 @@
           <input type="password" id="password" name="pw">            
           </div>
           <input id="button" type="submit" value="登入">
-          </form>-->
-        
+          </form>-->        
       </div>
     </div>
-      
+     <div class="frame">
+      <div class="border_comment_input">
+        <div>快來留言吧</div>     
+      <div>
+       <form id="form3" action=" {{ url_for('comment') }}" method="post" style="margin-right:50px;margin-top:50px;"> 
+          <div> 
+          <label id="com" for="comment">內容</label>
+          <input type="text" id="comment" name="comment">            
+          </div>
+          <input id="button_comment" type="submit" value="送出" style="margin-left: 55px;">
+          </form>
+        </div>
+      </div>
+  </div>  
+  <div class='frame'>
+    <div id="comment_area">
+        <div>{% for line in all_comment %}
+              <p>{{line}}</p>
+              {% endfor %}</div>     
+    </div>
+   </div>
   </body>    
 </html>

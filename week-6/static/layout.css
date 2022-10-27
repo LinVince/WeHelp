@@ -1,6 +1,6 @@
 .frame{
   display:flex;
-  justify-content:center;  
+  justify-content:center;
 }
 
 .frame_2{
@@ -36,11 +36,11 @@
 
 .border-login{
   width:800px;
-  height:300px;
+  height:auto;
   margin-top:100px;  
   border: 1px solid;
   border-color:#f5f5f5;
-  box-shadow: 10px 30px 30px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #welcome{
@@ -53,6 +53,18 @@
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+.border_comment_input{
+  height:250px;
+  width:800px;
+  background:white;
+  text-align:center;
+  padding-top:50px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size:20px;
+  font-weight:bolder;
+ 
 }
 
 .navigation{
@@ -103,6 +115,14 @@
   padding-right:20px;
 }
 
+#com{
+  text-align:center;  
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+  padding-right:20px;  
+}
+
 #int{
   text-align:center;  
   font-size:20px;
@@ -126,4 +146,19 @@
 
 #button_login{
   margin-top:20px;  
+}
+
+#button_comment{
+  margin-top:20px;
+}
+
+#comment_area{
+  background: white;
+  width: 800px;
+  height: 500px;
+  border: 1px solid lightgrey;
+  overflow: auto; 
+  text-align:left; 
+  font-size:20px;
+  font-weight:bolder;
 }
