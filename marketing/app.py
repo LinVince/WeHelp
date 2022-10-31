@@ -1,4 +1,5 @@
 import mysql.connector
+import bcrypt
 from flask import (
     Flask,
     redirect,
@@ -77,7 +78,7 @@ def signin():
     #html name=""
     account = request.form['ac']
     password = request.form['pw']
-    
+    password = password.encode('utf-8')
 
     if account == '' and password == '':
         return redirect('/')
@@ -89,23 +90,33 @@ def signin():
     #if the login account matches any of the accounts in the list
     #there will only one so [0]
     else:
-        query = "SELECT * FROM member WHERE username =  %s AND password = %s"
+        query = "SELECT * FROM member WHERE username =  %s"
         #Avoid "unread result error"
         mycursor = connection.cursor(buffered=True)
-        mycursor.execute(query, (account,password))
+
+        #Process the password and the salt
+
+        mycursor.execute(query, (account,))
         connection.commit()
         myresult = mycursor.fetchall()
-        
+
         if len(myresult) == 1:
-            #let the server get the cookie so that the login status can remain
-            session['user_id'] = myresult[0][1]
-            session['user_account'] = myresult[0][2]
-            session['user_login'] = True
-            return redirect('marketing_map')
+            salt = myresult[0][4]
+            salt = salt.encode('utf-8')
+            hashed_pw = bcrypt.hashpw(password,salt)
+            hashed_pw = hashed_pw.decode('utf-8')
+
+            if hashed_pw == myresult[0][3]: 
+                #let the server get the cookie so that the login status can remain
+                session['user_id'] = myresult[0][1]
+                session['user_account'] = myresult[0][2]
+                session['user_login'] = True
+                return redirect('marketing_map')
         
+            else:
+                return redirect(url_for('error',message="帳號或密碼輸入錯誤"))
         else:
             return redirect(url_for('error',message="帳號或密碼輸入錯誤"))
-    
 
     return render_template('index.html')
 
