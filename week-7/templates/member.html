@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
+  </head>
+  <body>
+    <div class="frame">
+      <div class="border-login">
+        <div id="welcome">歡迎光臨，這是會員頁</div>
+        <div class="navigation">恭喜 {{ name }}，成功登入系統</div>
+        <br><br><div class="navigation"><a href = "/signout">登出系統</a></div>
+        <!--<form id="form" action=" {{ url_for('signin') }}" method="post">
+          <div>
+          <label id="aclb" for="account">帳號</label>
+          <input type="text" id="account" name="ac">
+          </div>
+          <div> 
+          <label id="pwlb" for="password">密碼</label>
+          <input type="password" id="password" name="pw">            
+          </div>
+          <input id="button" type="submit" value="登入">
+          </form>-->        
+      </div>
+    </div>
+     <div class="frame">
+      <div class="border_comment_input">
+        <div>查詢會員姓名</div>     
+      <div>
+       <div id="form3" style="margin-right:50px;margin-top:50px; display:flex; flex-direction: row; justify-content: center;"> 
+          <div> 
+          <input type="text" id="search_input" name="search">            
+          </div>
+          <button id="search_button" style="margin-left: 5px;">查詢</button>
+          </div>
+        </div>
+        <div id = "display_name" style="margin-top: 20px"></div>
+      </div>
+  </div>
+
+  <script type="text/javascript" src="/static/app.js"></script>  
+  </body>    
+</html>
