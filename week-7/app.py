@@ -205,29 +205,67 @@ def member():
     else:
         return redirect('/')
 
-@app.route('/ap/member',methods=['GET'])
+@app.route('/ap/member',methods=['GET','PATCH'])
 def ap_member():
-    my_username = request.args.get("username")
-    connection = mysql.connector.connect(user=mydb.user, 
-                                            password=mydb.password,
-                                            host='127.0.0.1',
-                                            database=mydb.database
-                                            )
-    mycursor = connection.cursor(buffered=True)
-    
-    try:
-        query = """SELECT id, name, username
-                FROM member
-                WHERE username = %s"""
-        mycursor.execute(query,(my_username,))    
-        myresult = mycursor.fetchall()
-        data = {"data":{"id":myresult[0][0], "name":myresult[0][1], "username":myresult[0][2]}}
+    if request.method == 'GET':
+        my_username = request.args.get("username")
+        connection = mysql.connector.connect(user=mydb.user, 
+                                                password=mydb.password,
+                                                host='127.0.0.1',
+                                                database=mydb.database
+                                                )
+        mycursor = connection.cursor(buffered=True)
+        
+        try:
+            query = """SELECT id, name, username
+                    FROM member
+                    WHERE username = %s"""
+            mycursor.execute(query,(my_username,))    
+            myresult = mycursor.fetchall()
+            data = {"data":{"id":myresult[0][0], "name":myresult[0][1], "username":myresult[0][2]}}
+
+            
+            return jsonify(data)
+
+        except:
+            return jsonify({"data":None})
+
+
+    if request.method == 'PATCH':     
+        connection = mysql.connector.connect(user=mydb.user, 
+                                                password=mydb.password,
+                                                host='127.0.0.1',
+                                                database=mydb.database
+                                                )
+        mycursor = connection.cursor(buffered=True)
+        
+        
+        newname = request.get_json()['name']
+
 
         
-        return jsonify(data)
+        try:
+            my_username = session['user_account']
+            query = """UPDATE member 
+                    SET name = %s
+                    WHERE username = %s"""
+            mycursor.execute(query,(newname ,my_username))    
+            connection.commit() 
 
-    except:
-        return jsonify({"data":None})
+            query = """SELECT name FROM member                     
+                    WHERE username = %s"""
+            mycursor.execute(query,(my_username,))
+            result = mycursor.fetchall()
+
+            if result[0][0] == newname:
+                return jsonify({'ok':True})
+
+            else:
+                return jsonify({'error':True})
+
+        except:
+            return jsonify({'error':True})
+       
 
 
 #沒有辦法一次拿完form資料後跳到square/整數，需要中繼站在導一次
