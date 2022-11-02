@@ -1,5 +1,5 @@
 async function getusername(username){	
-	var requestURL = "http://127.0.0.1:3000/ap/member?username=" + username;
+	let requestURL = "http://127.0.0.1:3000/ap/member?username=" + username;
 	const getData =  await fetch(requestURL);
 	return getData.json();
 };
@@ -18,8 +18,8 @@ username_btn.addEventListener('click', function(){
 });
 	
 async function changeusername(username){	
-	var requestURL = "http://127.0.0.1:3000/ap/member";
-	var obj = {"name": username};
+	let requestURL = "http://127.0.0.1:3000/ap/member";
+	let obj = {"name": username};
 	//Please write the following line to set your jsondata..otherwise....
     json_data = JSON.stringify(obj);
 	const get_response = await fetch(requestURL,{

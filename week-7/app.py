@@ -245,20 +245,15 @@ def ap_member():
 
         
         try:
-            my_username = session['user_account']
-            query = """UPDATE member 
-                    SET name = %s
-                    WHERE username = %s"""
-            mycursor.execute(query,(newname ,my_username))    
-            connection.commit() 
-
-            query = """SELECT name FROM member                     
-                    WHERE username = %s"""
-            mycursor.execute(query,(my_username,))
-            result = mycursor.fetchall()
-
-            if result[0][0] == newname:
+            if session['user_login'] == True:
+                my_username = session['user_account']
+                query = """UPDATE member 
+                        SET name = %s
+                        WHERE username = %s"""
+                mycursor.execute(query,(newname ,my_username))    
+                connection.commit() 
                 return jsonify({'ok':True})
+                
 
             else:
                 return jsonify({'error':True})
