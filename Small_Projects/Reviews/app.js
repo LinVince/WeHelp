@@ -29,7 +29,7 @@ const reviews = [
     name:"元智牧師",
     job:"",
     img:"https://img.freepik.com/premium-vector/avatar-vector-flat-face-icon-girls-women-girls-slavic-appearance-long-hair-straight-brown-user-web-sites-applications-stock-design-white-skin_599742-112.jpg?w=500",
-    text:"親愛的弘翔～學測剩下一個多月了！相信有弘翔這段期間掙扎奮鬥的努力＋神的運勢加持，結果一定會很不錯的👍只要弘翔盡全力預備，剩下的一切就交託給 神！神會用祂的全能來動工，就像上次你拿到31.6級分那樣的，再次興起神蹟^^弘翔加油！！！我們會幫你禱告到底的 祝 金榜題名 考試順利",
+    text:"親愛的弘翔～學測剩下一個多月了！相信有弘翔這段期間掙扎奮鬥的努力＋神的運勢加持，結果一定會很不錯的👍只要弘翔盡全力預備，剩下的一切就交託給 神！神會用祂的全能來動工，就像上次你拿到31.6級分那樣的，再次興起神蹟^^弘翔加油！！！我們會幫你禱告到底的 祝 金榜題名 考試順利"
   }
 ]
 
